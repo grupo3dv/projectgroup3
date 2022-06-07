@@ -18,7 +18,7 @@ from dash import html
 import base64
 import datetime as dt
 from dash.dependencies import Input, Output
-
+from dash import Dash
 
 
 # In[73]:

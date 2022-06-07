@@ -85,12 +85,12 @@ data = covid_impact2.loc[:,['Country name','Population 2020','Population 2019']]
 
 # plotting go figure for grouped bar chart
 
-fig = go.Figure(data=[go.Bar(name='Population 2019',x=data['Country name'],y=data['Population 2019']),
+fig2 = go.Figure(data=[go.Bar(name='Population 2019',x=data['Country name'],y=data['Population 2019']),
                       go.Bar(name='Population 2020',x=data['Country name'],y=data['Population 2020'])
                      ])
 
-fig.update_layout(barmode='group', title_text='Top10 countries with most population')
-fig.show()
+fig2.update_layout(barmode='group', title_text='Top10 countries with most population')
+fig2.show()
 
 
 # In[81]:
@@ -101,12 +101,12 @@ data = covid_impact2.loc[:,['Country name','Population 2020','COVID-19 deaths pe
 
 # plotting go figure for grouped bar chart
 
-fig = go.Figure(data=[go.Bar(name='COVID-19 deaths per 100,000 population in 2020',x=data['Country name'],y=data['COVID-19 deaths per 100,000 population in 2020']),
+fig3 = go.Figure(data=[go.Bar(name='COVID-19 deaths per 100,000 population in 2020',x=data['Country name'],y=data['COVID-19 deaths per 100,000 population in 2020']),
                       go.Bar(name='Population 2020',x=data['Country name'],y=data['Population 2020'])
                      ])
 
-fig.update_layout(barmode='group', title_text='teste')
-fig.show()
+fig3.update_layout(barmode='group', title_text='teste')
+fig3.show()
 
 
 # In[82]:
@@ -156,6 +156,19 @@ app = dash.Dash(__name__)
 
 server = app.server
 
+#test
+app.layout = html.Div(children=[
+    html.H1(children='My First DashBoard'),
+
+    html.Div(children='''
+        Example of html Container
+    '''),
+
+    dcc.Graph(
+        id='example-graph',
+        figure=fig
+    )
+])
 
 if __name__ == '__main__':
     app.run_server(debug=True)

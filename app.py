@@ -170,7 +170,7 @@ app.layout = html.Div(children=[
 
 
 
-if __name__ == '__main__':
+if __name__ == '__master__':
     app.run_server(debug=True)
 
 

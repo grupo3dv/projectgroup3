@@ -7,4 +7,3 @@ dash-core-components
 pandas
 numpy
 seaborn
-pyplot

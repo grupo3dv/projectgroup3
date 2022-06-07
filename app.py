@@ -20,7 +20,7 @@ from dash import html
 # In[73]:
 
 
-covid_impact = pd.read_csv (r'C:\Users\andre\Downloads\archive\WHRData2021.csv',sep = ",")
+covid_impact = pd.read_csv (r'WHRData2021.csv')
 covid_impact.head()
 
 
@@ -158,18 +158,6 @@ server = app.server
 
 
 
-app.layout = html.Div(children=[
-    html.H1(children='My First DashBoard'),
-
-    html.Div(children='''
-        Example of html Container
-    '''),
-
-    dcc.Graph(
-        id='example-graph',
-        figure=fig
-    )
-])
 
 
 

@@ -152,29 +152,33 @@ plt.title('correlation matrix of dataset')
 plt.show()
 
 
-# In[ ]:
-# The App itself
+#App itself
 
 app = dash.Dash(__name__)
 
 server = app.server
+
+
+
+
 app.layout = html.Div(children=[
     html.H1(children='My First DashBoard'),
 
-    html.Div(children='''
-        Example of html Container
-    '''),
+ 
 ])
-
-
-
-
 
 
 
 
 if __name__ == '__main__':
     app.run_server(debug=True)
+
+
+
+
+
+
+
 
 
 

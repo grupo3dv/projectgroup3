@@ -8,7 +8,6 @@
 
 import numpy as np 
 import pandas as pd 
-import matplotlib.pyplot as plt
 import seaborn as sns
 import plotly.express as px
 import plotly.graph_objects as go
@@ -126,29 +125,29 @@ covid_impact2['Female head of government'].value_counts()
 
 
 # Pie chart, where the slices will be ordered and plotted counter-clockwise:
-labels = 'Female', 'Male'
-sizes = [23, 140]
-explode = (0, 0)  
+#labels = 'Female', 'Male'
+#sizes = [23, 140]
+#explode = (0, 0)  
 
-fig1, ax1 = plt.subplots()
-ax1.pie(sizes, explode=explode, labels=labels, autopct='%1.1f%%',
-        shadow=True, startangle=90)
-ax1.axis('equal')  # Equal aspect ratio ensures that pie is drawn as a circle.
+#fig1, ax1 = plt.subplots()
+#ax1.pie(sizes, explode=explode, labels=labels, autopct='%1.1f%%',
+ #       shadow=True, startangle=90)
+#ax1.axis('equal')  # Equal aspect ratio ensures that pie is drawn as a circle.
 
-plt.show()
+#plt.show()
 
 
 # In[70]:
 
 
-plt.figure(figsize=(12,12))
-sns.heatmap(covid_impact2.corr(), 
-            vmin=-1, 
-            vmax=1, 
-            annot=True)
+#plt.figure(figsize=(12,12))
+#sns.heatmap(covid_impact2.corr(), 
+#            vmin=-1, 
+ #           vmax=1, 
+  #          annot=True)
 
-plt.title('correlation matrix of dataset')
-plt.show()
+#plt.title('correlation matrix of dataset')
+#plt.show()
 
 
 #App itself
@@ -156,17 +155,6 @@ plt.show()
 app = dash.Dash(__name__)
 
 server = app.server
-
-
-
-
-app.layout = html.Div(children=[
-    html.H1(children='My First DashBoard'),
-
- 
-])
-
-
 
 
 if __name__ == '__main__':

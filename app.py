@@ -158,6 +158,13 @@ plt.show()
 app = dash.Dash(__name__)
 
 server = app.server
+app.layout = html.Div(children=[
+    html.H1(children='My First DashBoard'),
+
+    html.Div(children='''
+        Example of html Container
+    '''),
+])
 
 
 

@@ -167,10 +167,14 @@ app.layout = html.Div(children=[
     dcc.Graph(
         id='example-graph',
         figure=fig
-    )
-    dcc.Checklist(['Africa', 'Asia', 'Europe','North America','South America','Oceania'],
-                  ['Europe'],
-                  inline=True)
+    ) ,
+  
+     dcc.Dropdown(
+        id='names_drop',
+        options= Continent,
+        value=1,
+        multi=True
+    ),
   
 ])
 

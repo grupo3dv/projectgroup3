@@ -27,7 +27,7 @@ from dash import Dash
 # In[116]:
 
 
-covid_impact = pd.read_csv (r'C:\Users\andre\Downloads\WHRData_2021.csv',sep = ",")
+covid_impact = pd.read_csv (r'WHRData_2021.csv',sep = ",")
 covid_impact.head()
 
 #r'WHRData_2021.csv'

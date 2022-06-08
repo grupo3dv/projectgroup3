@@ -168,7 +168,7 @@ app.layout = html.Div(children=[
         id='example-graph',
         figure=fig
     ) ,
-    dcc.Checklist(covid_impact2.Continent.unique(), covid_impact2.Continet.unique()[0:5])
+    dcc.Checklist(covid_impact2.Continent.unique(), covid_impact2.Continent.unique()[0:5])
 ])
 
 if __name__ == '__main__':

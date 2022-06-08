@@ -168,6 +168,9 @@ app.layout = html.Div(children=[
         id='example-graph',
         figure=fig
     )
+    dcc.Checklist(['Africa', 'Asia', 'Europe','North America','South America','Oceania'],
+                  inline=True)
+  
 ])
 
 if __name__ == '__main__':

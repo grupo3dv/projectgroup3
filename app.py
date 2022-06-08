@@ -169,12 +169,7 @@ app.layout = html.Div(children=[
         figure=fig
     ) ,
   
-     dcc.Dropdown(
-        id='names_drop',
-        options= Continent,
-        value=1,
-        multi=True
-    ),
+    dcc.Checklist(covid_impact2.columns, covid_impact2.columns[-1].values)
   
 ])
 

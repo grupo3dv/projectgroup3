@@ -22,6 +22,7 @@ from dash import dcc
 from dash import html
 from dash.dependencies import Input, Output
 from dash import Dash
+import matplotlib.pyplot as plt
 
 
 # In[116]:

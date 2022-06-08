@@ -22,7 +22,7 @@ from dash import Dash
 # In[73]:
 
 
-covid_impact = pd.read_csv (r'WHRData2021.csv')
+covid_impact = pd.read_csv (r'WHRData_2021.csv')
 covid_impact.head()
 
 

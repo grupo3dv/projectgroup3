@@ -169,6 +169,7 @@ app.layout = html.Div(children=[
         figure=fig
     )
     dcc.Checklist(['Africa', 'Asia', 'Europe','North America','South America','Oceania'],
+                  ['Europe'],
                   inline=True)
   
 ])

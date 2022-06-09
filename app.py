@@ -189,7 +189,7 @@ plt.show()
 
 #ex2_fig.show()
 
-G
+
 
 
 scatter_Pop19 = dict(type='bar',

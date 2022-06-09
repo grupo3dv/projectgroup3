@@ -579,7 +579,7 @@ pie_chart_fig_oce.show()
 #teste
 
 
-fig_teste = px.scatter(covid_impact2), 
+fig_teste = px.scatter(covid_impact2[]), 
                  x='Median age', 
                  y='Gini coefficient of income', 
                  color='Country name',
@@ -625,7 +625,7 @@ app.layout = html.Div(children=[
 
     dcc.Graph(
         id='example-graph',
-        figure=fig_teste
+        figure=fig_10countriespop
     ) ,
     app.layout = html.Div([
     html.H4('Life expentancy progression of countries per continents'),
@@ -642,11 +642,11 @@ app.layout = html.Div(children=[
 @app.callback(
     Output("graph", "figure"), 
     Input("checklist", "value"))
-def update_scatter_chart(Continent):
+def update_bar_chart(covid_impact2):
     covid_impact2 = px.data.gapminder() # replace with your own data source
-    mask = covid_impact2.Continent.isin(Continent)
-    fig = px.scatter(covid_impact2[mask], 
-        x="Median age", y="Gini coefficient of income", color='Country name')
+    mask = covid_impact2
+    fig = px.bar(covid_impact2[mask], 
+        x='Country name', y='Population 2020')
     return fig
 
 

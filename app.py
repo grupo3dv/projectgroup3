@@ -42,16 +42,6 @@ plots_Legend_fontSize = 12
 plots_Legend_textColour = 'black'
 
 
-# In[3]:
-
-
-pip install colour
-
-
-# In[4]:
-
-
-pip install -U kaleido
 
 
 # In[5]:

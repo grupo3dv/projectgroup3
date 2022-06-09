@@ -579,7 +579,7 @@ pie_chart_fig_oce.show()
 #teste
 
 
-fig_teste = px.scatter(covid_impact2[(covid_impact2['Continent'] == 'Europe')], 
+fig_teste = px.scatter(covid_impact2), 
                  x='Median age', 
                  y='Gini coefficient of income', 
                  color='Country name',
@@ -627,7 +627,31 @@ app.layout = html.Div(children=[
         id='example-graph',
         figure=fig_teste
     ) ,
-    dcc.Checklist(covid_impact2.Continent.unique(), covid_impact2.Continent.unique()[0:5])
+    app.layout = html.Div([
+    html.H4('Life expentancy progression of countries per continents'),
+    dcc.Graph(id="graph"),
+    dcc.Checklist(
+        id="checklist",
+        options=["Asia", "Europe", "Africa","South America","North America","Oceania"],
+        value=["Europe", "Oceania"],
+        inline=True
+    )
+])
+
+
+@app.callback(
+    Output("graph", "figure"), 
+    Input("checklist", "value"))
+def update_line_chart(Continent):
+    covid_impact2 = px.data.gapminder() # replace with your own data source
+    mask = covid_impact2.Continent.isin(Continent)
+    fig = px.line(covid_impact2[mask], 
+        x="Median age", y="Gini coefficient of income", color='Country name')
+    return fig
+
+
+app.run_server(debug=True)
+
 ])
 
 if __name__ == '__main__':

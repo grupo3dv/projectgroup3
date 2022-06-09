@@ -187,9 +187,9 @@ plt.show()
 
 #ex2_fig = go.Figure(data=ex2_data, layout=ex2_layout)
 
-#ex2_fig.show(renderer='iframe')
+#ex2_fig.show()
 
-
+G
 
 
 scatter_Pop19 = dict(type='bar',
@@ -214,7 +214,7 @@ scatter_layout = dict(title=dict(text='Population per Continent: 2019|2020'),
 
 scatter_fig = go.Figure(data=scatter_data, layout=scatter_layout)
 
-scatter_fig.show(renderer='iframe')
+scatter_fig.show()
 
 
 
@@ -258,7 +258,7 @@ pie_chart_layout = dict (title=dict(text='Covid-19 Deaths per Continent')
                   )
 pie_chart_fig = go.Figure(data=pie_chart_data, layout=pie_chart_layout)
 
-pie_chart_fig.show(renderer='iframe')
+pie_chart_fig.show()
 
 
 # In[20]:
@@ -570,7 +570,7 @@ pie_chart_layout_oce = dict (title=dict(text='Oceania Covid-19 Deaths')
                   )
 pie_chart_fig_oce = go.Figure(data=pie_chart_data_oce, layout=pie_chart_layout_oce)
 
-pie_chart_fig_oce.show(renderer='iframe')
+pie_chart_fig_oce.show()
 
 
 # In[39]:

@@ -642,10 +642,10 @@ app.layout = html.Div(children=[
 @app.callback(
     Output("graph", "figure"), 
     Input("checklist", "value"))
-def update_line_chart(Continent):
+def update_scatter_chart(Continent):
     covid_impact2 = px.data.gapminder() # replace with your own data source
     mask = covid_impact2.Continent.isin(Continent)
-    fig = px.line(covid_impact2[mask], 
+    fig = px.scatter(covid_impact2[mask], 
         x="Median age", y="Gini coefficient of income", color='Country name')
     return fig
 

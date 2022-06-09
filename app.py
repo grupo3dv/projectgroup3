@@ -629,7 +629,7 @@ app.layout = html.Div(children=[
     ) ,
     dcc.Checklist(
         id="checklist",
-        options=[covid_impact2['Continent']],
+        options=[covid_impact2['Continent'][0:5]],
         value=[covid_impact2['Continent'][0:5]],
         inline=True
     )

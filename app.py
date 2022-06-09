@@ -579,15 +579,15 @@ pie_chart_fig_oce.show()
 #teste
 
 
-fig_teste = px.scatter(covid_impact2), 
-                 x='Median age', 
-                 y='Gini coefficient of income', 
-                 color='Country name',
-                 trendline='ols',
-                 trendline_scope='overall',
-                 trendline_color_override='black'
-                )
-fig_teste.show()
+#fig_teste = px.scatter(covid_impact2), 
+ #                x='Median age', 
+  #               y='Gini coefficient of income', 
+   #              color='Country name',
+    #             trendline='ols',
+     #            trendline_scope='overall',
+      #           trendline_color_override='black'
+       #         )
+#fig_teste.show()
 
 
 # In[40]:

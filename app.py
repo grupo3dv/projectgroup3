@@ -627,9 +627,6 @@ app.layout = html.Div(children=[
         id='example-graph',
         figure=fig_10countriespop
     ) ,
-    app.layout = html.Div([
-    html.H4('Life expentancy progression of countries per continents'),
-    dcc.Graph(id="graph"),
     dcc.Checklist(
         id="checklist",
         options=["Asia", "Europe", "Africa","South America","North America","Oceania"],

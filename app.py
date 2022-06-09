@@ -41,8 +41,6 @@ plots_Title_textColour = 'black'
 plots_Legend_fontSize = 12
 plots_Legend_textColour = 'black'
 
-# In[3]
-pip install --upgrade nbformat
 
 # In[5]:
 

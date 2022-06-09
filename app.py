@@ -647,10 +647,6 @@ def update_bar_chart(covid_impact2):
     return fig
 
 
-app.run_server(debug=True)
-
-])
-
 if __name__ == '__main__':
     app.run_server(debug=True)
 

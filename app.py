@@ -620,7 +620,9 @@ app = dash.Dash(__name__)
 server = app.server
 
 #test
-app.layout = html.Div(children=[
+app.layout = html.Div(
+    
+    html.Div(children=[
     html.H1(children='PROFILING COUNTRIES WITH RELATION TO COVID-19 DEATHS'),
 
     html.Div(children='''
@@ -644,6 +646,8 @@ app.layout = html.Div(children=[
 
 
 ])
+            
+)
 
 
 

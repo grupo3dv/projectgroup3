@@ -642,16 +642,13 @@ app.layout = html.Div([
     value=continents[0],
     multi=False
     ),
+    ]),
     
     html.Div(dcc.Graph(id='example-graph',figure=fig_10countriespop)),
 
-    ]),
+    ])
 
-])
-                
 
-            
-])
 
 #@app.callback(
  #   Output('example-graph', 'fig_10countriespop'),

@@ -103,8 +103,8 @@ covid_impact2.isnull().sum()
 covid_impact2.info()
 
 colors = {
-    'background': '#111111',
-    'text': '#7FDBFF'
+    'background': '#222',
+    'text': '#fff'
 }
 # In[12]:
 
@@ -611,12 +611,12 @@ app = dash.Dash(__name__,
 
 server = app.server
 
-app.title = "PROFILING COUNTRIES WITH RELATION TO COVID-19 DEATHS"
+app.title = "Profiling Countries with relation to COVID-19 Deaths"
 
 app.layout = html.Div([
     
     html.Div(children=[
-    html.H1(children='PROFILING COUNTRIES WITH RELATION TO COVID-19 DEATHS'),
+    html.H1(children='Profiling Countries with relation to COVID-19 Deaths'),
 
     ]),
     

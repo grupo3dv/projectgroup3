@@ -184,32 +184,6 @@ plt.show()
 
 
 #Scatter with 2 traces: Population 2019 and Population 2020
-#ex2_trace1 = dict(type='scatter',
-                  #x=ex2['Month'],
-                  #y=ex2['2014 Sales'],
-                  #name='2014 Sales'
-                  #)
-
-#ex2_trace2 = dict(type='scatter',
-                  #x=ex2['Month'],
-                  #y=ex2['2015 Sales'],
-                  #name='2015 Sales'
-                  #)
-
-#ex2_data = [ex2_trace1, ex2_trace2]
-
-
-#ex2_layout = dict(title=dict(text='Montly Sales over 2014 and 2015'),
-                  #xaxis=dict(title='Months'),
-                  #yaxis=dict(title='Sales in Monetatry Units')
-                  #)
-
-#ex2_fig = go.Figure(data=ex2_data, layout=ex2_layout)
-
-#ex2_fig.show()
-
-
-
 
 scatter_Pop19 = dict(type='bar',
                   x=covid_impact2['Continent'],
@@ -234,15 +208,6 @@ scatter_layout = dict(title=dict(text='Population per Continent: 2019|2020'),
 scatter_fig = go.Figure(data=scatter_data, layout=scatter_layout)
 
 scatter_fig.show()
-
-
-
-
-
-
-# In[18]:
-
-
 
 
 # In[19]:
@@ -282,10 +247,7 @@ fig_10countries = px.bar(datasort_10countries,
                          color='Continent'
                          )
                          
-fig_10countries.update_layout(title_text='Top10 Countries: Covid-19 Deaths', plot_bgcolor=colors['background'],
-    paper_bgcolor=colors['background'],
-    font_color=colors['text']
- )
+fig_10countries.update_layout(title_text='Top10 Countries: Covid-19 Deaths')
 
 fig_10countries.show()
 
@@ -296,7 +258,9 @@ fig_10countries.show()
 
 bubble_age_deaths = px.scatter(covid_impact2, x='Median age', y='COVID-19 deaths per 100,000 population in 2020', size='Population 2020', color='Continent', size_max=100, hover_name='Country name', log_x=True
                 )
-bubble_age_deaths.update_layout(title_text='Median age VS Covid-19 Deaths per 100,000')
+bubble_age_deaths.update_layout(title_text='Median age VS Covid-19 Deaths per 100,000', plot_bgcolor=colors['background'],
+    paper_bgcolor=colors['background'],
+    font_color=colors['text'])
 bubble_age_deaths.show()
 
 

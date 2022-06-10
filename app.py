@@ -652,12 +652,12 @@ app.layout = html.Div([
 
     ]),
     
-    html.Div(dcc.Graph(id='bubble_age_deaths_graph',figure={bubble_age_deaths,'layout': {
+    html.Div(dcc.Graph(id='bubble_age_deaths_graph',figure= {'layout': {
                 'plot_bgcolor': colors['background'],
                 'paper_bgcolor': colors['background'],
                 'font': {
                     'color': colors['text']
-                }})),
+                }}})),
     
     html.Div(dcc.Graph(id='pie_chart_femaleleaders',figure=pie_chart_female)),
     

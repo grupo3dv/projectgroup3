@@ -271,10 +271,10 @@ fig_10countries.show()
 
 # Bubble-Chart: Median age vs Covid-19 Deaths
 
-figure_age_deaths = px.scatter(covid_impact2, x='Median age', y='COVID-19 deaths per 100,000 population in 2020', size='Population 2020', color='Continent', size_max=100, hover_name='Country name', log_x=True
+bubble_age_deaths = px.scatter(covid_impact2, x='Median age', y='COVID-19 deaths per 100,000 population in 2020', size='Population 2020', color='Continent', size_max=100, hover_name='Country name', log_x=True
                 )
-figure_age_deaths.update_layout(title_text='Median age VS Covid-19 Deaths per 100,000')
-figure_age_deaths.show()
+bubble_age_deaths.update_layout(title_text='Median age VS Covid-19 Deaths per 100,000')
+bubble_age_deaths.show()
 
 
 # ### Data Analysis by Continents
@@ -311,7 +311,7 @@ fig_europe1.show()
 
 europe_exposure_trust = px.bar(covid_impactEurope, x='Country name', y='Index of exposure to COVID-19  infections in other countries as of March 31',
              hover_data=['Index of institutional trust'], color='Index of institutional trust',
-             labels={'Index of exposure to COVID-19  infections in other countries as of March 31':'Index of Covid-19 Exposure'}, height=600, title= "Index Covid-19 Exposure vs Index of Instituional Trust",
+             labels={'Index of exposure to COVID-19  infections in other countries as of March 31':'Index of Covid-19 Exposure'}, height=600, title= "Index Covid-19 Exposure vs Index of Instituional Trust in Europe",
             color_continuous_scale='sunset')
 europe_exposure_trust.show()
 
@@ -322,7 +322,7 @@ europe_exposure_trust.show()
 
 europe_exposure_income = px.bar(covid_impactEurope, x='Country name', y='Index of exposure to COVID-19  infections in other countries as of March 31',
              hover_data=['Gini coefficient of income'], color='Gini coefficient of income',
-             labels={'Index of exposure to COVID-19  infections in other countries as of March 31':'Index Covid-19 Exposure'}, height=600, title= "Index Covid-19 Exposure in the European Continent",
+             labels={'Index of exposure to COVID-19  infections in other countries as of March 31':'Index Covid-19 Exposure'}, height=600, title= "Index Covid-19 Exposure vs GINI Coefficient of Income in Europe",
             color_continuous_scale='tealgrn'
             )
 europe_exposure_income.show()
@@ -344,7 +344,7 @@ covid_impactAfrica = covid_impact2[(covid_impact2['Continent'] == 'Africa')]
 
 africa_exposure_trust = px.bar(covid_impactAfrica, x='Country name', y='Index of exposure to COVID-19  infections in other countries as of March 31',
              hover_data=['Index of institutional trust'], color='Index of institutional trust',
-             labels={'Index of exposure to COVID-19  infections in other countries as of March 31':'Index of Covid-19 Exposure'}, height=600, title= "Index Covid-19 Exposure vs Index of Instituional Trust",
+             labels={'Index of exposure to COVID-19  infections in other countries as of March 31':'Index of Covid-19 Exposure'}, height=600, title= "Index Covid-19 Exposure vs Index of Instituional Trust in Africa",
             color_continuous_scale='sunset')
 africa_exposure_trust.show()
 
@@ -357,7 +357,7 @@ africa_exposure_trust.show()
 
 africa_exposure_income = px.bar(covid_impactAfrica, x='Country name', y='Index of exposure to COVID-19  infections in other countries as of March 31',
              hover_data=['Gini coefficient of income'], color='Gini coefficient of income',
-             labels={'Index of exposure to COVID-19  infections in other countries as of March 31':'Index Covid-19 Exposure'}, height=600, title= "Index Covid-19 Exposure in the African Continent",
+             labels={'Index of exposure to COVID-19  infections in other countries as of March 31':'Index Covid-19 Exposure'}, height=600, title= "Index Covid-19 Exposure vs GINI Coefficient of Income in Africa",
             color_continuous_scale='tealgrn'
             )
 africa_exposure_income.show()
@@ -381,7 +381,7 @@ covid_impactAsia
 
 asia_exposure_trust = px.bar(covid_impactAsia, x='Country name', y='Index of exposure to COVID-19  infections in other countries as of March 31',
              hover_data=['Index of institutional trust'], color='Index of institutional trust',
-             labels={'Index of exposure to COVID-19  infections in other countries as of March 31':'Index of Covid-19 Exposure'}, height=600, title= "Index Covid-19 Exposure vs Index of Instituional Trust",
+             labels={'Index of exposure to COVID-19  infections in other countries as of March 31':'Index of Covid-19 Exposure'}, height=600, title= "Index Covid-19 Exposure vs Index of Instituional Trust in Asia",
             color_continuous_scale='sunset')
 asia_exposure_trust.show()
 
@@ -389,7 +389,7 @@ asia_exposure_trust.show()
 
 asia_exposure_income = px.bar(covid_impactAsia, x='Country name', y='Index of exposure to COVID-19  infections in other countries as of March 31',
              hover_data=['Gini coefficient of income'], color='Gini coefficient of income',
-             labels={'Index of exposure to COVID-19  infections in other countries as of March 31':'Index Covid-19 Exposure'}, height=600, title= "Index Covid-19 Exposure in the Asian Continent",
+             labels={'Index of exposure to COVID-19  infections in other countries as of March 31':'Index Covid-19 Exposure'}, height=600, title= "Index Covid-19 Exposure vs GINI Coefficient of Income in Asia",
             color_continuous_scale='tealgrn'
             )
 asia_exposure_income.show()
@@ -413,7 +413,7 @@ covid_impactNorthAmerica
 
 northamerica_exposure_trust = px.bar(covid_impactNorthAmerica, x='Country name', y='Index of exposure to COVID-19  infections in other countries as of March 31',
              hover_data=['Index of institutional trust'], color='Index of institutional trust',
-             labels={'Index of exposure to COVID-19  infections in other countries as of March 31':'Index of Covid-19 Exposure'}, height=600, title= "Index Covid-19 Exposure vs Index of Instituional Trust",
+             labels={'Index of exposure to COVID-19  infections in other countries as of March 31':'Index of Covid-19 Exposure'}, height=600, title= "Index Covid-19 Exposure vs Index of Instituional Trust in North America",
             color_continuous_scale='sunset')
 northamerica_exposure_trust.show()
 
@@ -421,7 +421,7 @@ northamerica_exposure_trust.show()
 
 northamerica_exposure_income = px.bar(covid_impactNorthAmerica, x='Country name', y='Index of exposure to COVID-19  infections in other countries as of March 31',
              hover_data=['Gini coefficient of income'], color='Gini coefficient of income',
-             labels={'Index of exposure to COVID-19  infections in other countries as of March 31':'Index Covid-19 Exposure'}, height=600, title= "Index Covid-19 Exposure in the North American Continent",
+             labels={'Index of exposure to COVID-19  infections in other countries as of March 31':'Index Covid-19 Exposure'}, height=600, title= "Index Covid-19 Exposure vs GINI Coefficient of Income in North America",
             color_continuous_scale='tealgrn'
             )
 northamerica_exposure_income.show()
@@ -443,7 +443,7 @@ covid_impactSouthAmerica
 
 southamerica_exposure_trust = px.bar(covid_impactSouthAmerica, x='Country name', y='Index of exposure to COVID-19  infections in other countries as of March 31',
              hover_data=['Index of institutional trust'], color='Index of institutional trust',
-             labels={'Index of exposure to COVID-19  infections in other countries as of March 31':'Index of Covid-19 Exposure'}, height=600, title= "Index Covid-19 Exposure vs Index of Instituional Trust",
+             labels={'Index of exposure to COVID-19  infections in other countries as of March 31':'Index of Covid-19 Exposure'}, height=600, title= "Index Covid-19 Exposure vs Index of Instituional Trust in South America",
             color_continuous_scale='sunset')
 southamerica_exposure_trust.show()
 
@@ -451,7 +451,7 @@ southamerica_exposure_trust.show()
 
 southamerica_exposure_income = px.bar(covid_impactSouthAmerica, x='Country name', y='Index of exposure to COVID-19  infections in other countries as of March 31',
              hover_data=['Gini coefficient of income'], color='Gini coefficient of income',
-             labels={'Index of exposure to COVID-19  infections in other countries as of March 31':'Index Covid-19 Exposure'}, height=600, title= "Index Covid-19 Exposure in the South American Continent",
+             labels={'Index of exposure to COVID-19  infections in other countries as of March 31':'Index Covid-19 Exposure'}, height=600, title= "Index Covid-19 Exposure vs GINI Coefficient of Income in South America",
             color_continuous_scale='tealgrn'
             )
 southamerica_exposure_income.show()
@@ -473,7 +473,7 @@ covid_impactOceania
 
 oceania_exposure_trust = px.bar(covid_impactOceania, x='Country name', y='Index of exposure to COVID-19  infections in other countries as of March 31',
              hover_data=['Index of institutional trust'], color='Index of institutional trust',
-             labels={'Index of exposure to COVID-19  infections in other countries as of March 31':'Index of Covid-19 Exposure'}, height=600, title= "Index Covid-19 Exposure vs Index of Instituional Trust",
+             labels={'Index of exposure to COVID-19  infections in other countries as of March 31':'Index of Covid-19 Exposure'}, height=600, title= "Index Covid-19 Exposure vs Index of Instituional Trust in Oceania",
             color_continuous_scale='sunset')
 oceania_exposure_trust.show()
 
@@ -482,7 +482,7 @@ oceania_exposure_trust.show()
 
 oceania_exposure_income = px.bar(covid_impactOceania, x='Country name', y='Index of exposure to COVID-19  infections in other countries as of March 31',
              hover_data=['Gini coefficient of income'], color='Gini coefficient of income',
-             labels={'Index of exposure to COVID-19  infections in other countries as of March 31':'Index Covid-19 Exposure'}, height=600, title= "Index Covid-19 Exposure in the Oceania Continent",
+             labels={'Index of exposure to COVID-19  infections in other countries as of March 31':'Index Covid-19 Exposure'}, height=600, title= "Index Covid-19 Exposure vs GINI Coefficient of Income in Oceania",
             color_continuous_scale='tealgrn'
             )
 oceania_exposure_income.show()
@@ -627,7 +627,9 @@ app.layout = html.Div([
     html.H1(children='PROFILING COUNTRIES WITH RELATION TO COVID-19 DEATHS'),
 
     ]),
-
+    
+    html.Div(dcc.Graph(id='covid_deaths_graph',figure=bubble_age_deaths)),
+                    
     html.Div([
     
     html.Label(['Choose a Continent to analyse:'],style={'font-weight': 'bold'}),

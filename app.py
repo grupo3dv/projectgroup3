@@ -742,16 +742,16 @@ def select_continent(value):
     if value == 'continents[0]':
         fig = fig_10countries_northamerica
         return fig
-    else: if value == 'continents[1]':
+    elif value == 'continents[1]':
         fig = fig_10countries_africa
         return fig
-    else: if value == 'continents[2]':
+    elif value == 'continents[2]':
         fig = fig_10countries_asia
         return fig
-    else: if value == 'continents[3]':
+    elif value == 'continents[3]':
         fig = fig_10countries_europe
         return fig
-    else: if value == 'continents[4]':
+    elif value == 'continents[4]':
         fig = fig_10countries_southamerica
         return fig
     else:

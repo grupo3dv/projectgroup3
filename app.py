@@ -607,7 +607,7 @@ fig_population.show()
 
 
 # In[41]:
-continents_names = covid_impact2['Continent']
+continents_names = covid_impact2['Continent'].unique()
 continents = [dict(label=continent ,value=continent_id) for continent, continent_id in zip(continents_names, covid_impact2.index)]
                                  
 #fullnames = drivers['forename'] + str(" ") + drivers['surname']

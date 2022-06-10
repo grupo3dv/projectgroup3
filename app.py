@@ -155,7 +155,9 @@ pie_chart_dataf = dict(type='pie',
 pie_chart_layoutf = dict (title=dict(text='Percentage of Female Leaders per Continent')
                   )
 pie_chart_female = go.Figure(data=pie_chart_dataf, layout=pie_chart_layoutf)
-
+pie_chart_female.update_layout(plot_bgcolor=colors['background'],
+    paper_bgcolor=colors['background'],
+    font_color=colors['text'])
 pie_chart_female.show()
 # In[15]:
 
@@ -300,6 +302,9 @@ europe_exposure_trust = px.bar(covid_impactEurope, x='Country name', y='Index of
              hover_data=['Index of institutional trust'], color='Index of institutional trust',
              labels={'Index of exposure to COVID-19  infections in other countries as of March 31':'Index of Covid-19 Exposure'}, height=600, title= "Index Covid-19 Exposure vs Index of Instituional Trust in Europe",
             color_continuous_scale='sunset')
+europe_exposure_trust.update_layout(plot_bgcolor=colors['background'],
+    paper_bgcolor=colors['background'],
+    font_color=colors['text'])
 europe_exposure_trust.show()
 
 
@@ -312,6 +317,9 @@ europe_exposure_income = px.bar(covid_impactEurope, x='Country name', y='Index o
              labels={'Index of exposure to COVID-19  infections in other countries as of March 31':'Index Covid-19 Exposure'}, height=600, title= "Index Covid-19 Exposure vs GINI Coefficient of Income in Europe",
             color_continuous_scale='tealgrn'
             )
+europe_exposure_income.update_layout(plot_bgcolor=colors['background'],
+    paper_bgcolor=colors['background'],
+    font_color=colors['text'])
 europe_exposure_income.show()
 
 
@@ -333,6 +341,9 @@ africa_exposure_trust = px.bar(covid_impactAfrica, x='Country name', y='Index of
              hover_data=['Index of institutional trust'], color='Index of institutional trust',
              labels={'Index of exposure to COVID-19  infections in other countries as of March 31':'Index of Covid-19 Exposure'}, height=600, title= "Index Covid-19 Exposure vs Index of Instituional Trust in Africa",
             color_continuous_scale='sunset')
+africa_exposure_trust.update_layout(plot_bgcolor=colors['background'],
+    paper_bgcolor=colors['background'],
+    font_color=colors['text'])
 africa_exposure_trust.show()
 
 
@@ -347,6 +358,9 @@ africa_exposure_income = px.bar(covid_impactAfrica, x='Country name', y='Index o
              labels={'Index of exposure to COVID-19  infections in other countries as of March 31':'Index Covid-19 Exposure'}, height=600, title= "Index Covid-19 Exposure vs GINI Coefficient of Income in Africa",
             color_continuous_scale='tealgrn'
             )
+africa_exposure_income.update_layout(plot_bgcolor=colors['background'],
+    paper_bgcolor=colors['background'],
+    font_color=colors['text'])
 africa_exposure_income.show()
 
 
@@ -370,6 +384,9 @@ asia_exposure_trust = px.bar(covid_impactAsia, x='Country name', y='Index of exp
              hover_data=['Index of institutional trust'], color='Index of institutional trust',
              labels={'Index of exposure to COVID-19  infections in other countries as of March 31':'Index of Covid-19 Exposure'}, height=600, title= "Index Covid-19 Exposure vs Index of Instituional Trust in Asia",
             color_continuous_scale='sunset')
+asia_exposure_trust.update_layout(plot_bgcolor=colors['background'],
+    paper_bgcolor=colors['background'],
+    font_color=colors['text'])
 asia_exposure_trust.show()
 
 # Index Covid-19 Exposure in the Asian Continent
@@ -379,6 +396,9 @@ asia_exposure_income = px.bar(covid_impactAsia, x='Country name', y='Index of ex
              labels={'Index of exposure to COVID-19  infections in other countries as of March 31':'Index Covid-19 Exposure'}, height=600, title= "Index Covid-19 Exposure vs GINI Coefficient of Income in Asia",
             color_continuous_scale='tealgrn'
             )
+asia_exposure_income.update_layout(plot_bgcolor=colors['background'],
+    paper_bgcolor=colors['background'],
+    font_color=colors['text'])
 asia_exposure_income.show()
 
 
@@ -402,6 +422,9 @@ northamerica_exposure_trust = px.bar(covid_impactNorthAmerica, x='Country name',
              hover_data=['Index of institutional trust'], color='Index of institutional trust',
              labels={'Index of exposure to COVID-19  infections in other countries as of March 31':'Index of Covid-19 Exposure'}, height=600, title= "Index Covid-19 Exposure vs Index of Instituional Trust in North America",
             color_continuous_scale='sunset')
+northamerica_exposure_trust.update_layout(plot_bgcolor=colors['background'],
+    paper_bgcolor=colors['background'],
+    font_color=colors['text'])
 northamerica_exposure_trust.show()
 
 # Index Covid-19 Exposure in the North American Continent
@@ -411,6 +434,9 @@ northamerica_exposure_income = px.bar(covid_impactNorthAmerica, x='Country name'
              labels={'Index of exposure to COVID-19  infections in other countries as of March 31':'Index Covid-19 Exposure'}, height=600, title= "Index Covid-19 Exposure vs GINI Coefficient of Income in North America",
             color_continuous_scale='tealgrn'
             )
+northamerica_exposure_income.update_layout(plot_bgcolor=colors['background'],
+    paper_bgcolor=colors['background'],
+    font_color=colors['text'])
 northamerica_exposure_income.show()
 
 # #### South-America
@@ -432,6 +458,9 @@ southamerica_exposure_trust = px.bar(covid_impactSouthAmerica, x='Country name',
              hover_data=['Index of institutional trust'], color='Index of institutional trust',
              labels={'Index of exposure to COVID-19  infections in other countries as of March 31':'Index of Covid-19 Exposure'}, height=600, title= "Index Covid-19 Exposure vs Index of Instituional Trust in South America",
             color_continuous_scale='sunset')
+southamerica_exposure_trust.update_layout(plot_bgcolor=colors['background'],
+    paper_bgcolor=colors['background'],
+    font_color=colors['text'])
 southamerica_exposure_trust.show()
 
 # Index Covid-19 Exposure in the South American Continent
@@ -441,6 +470,9 @@ southamerica_exposure_income = px.bar(covid_impactSouthAmerica, x='Country name'
              labels={'Index of exposure to COVID-19  infections in other countries as of March 31':'Index Covid-19 Exposure'}, height=600, title= "Index Covid-19 Exposure vs GINI Coefficient of Income in South America",
             color_continuous_scale='tealgrn'
             )
+southamerica_exposure_income.update_layout(plot_bgcolor=colors['background'],
+    paper_bgcolor=colors['background'],
+    font_color=colors['text'])
 southamerica_exposure_income.show()
 
 # #### Oceania
@@ -462,6 +494,9 @@ oceania_exposure_trust = px.bar(covid_impactOceania, x='Country name', y='Index 
              hover_data=['Index of institutional trust'], color='Index of institutional trust',
              labels={'Index of exposure to COVID-19  infections in other countries as of March 31':'Index of Covid-19 Exposure'}, height=600, title= "Index Covid-19 Exposure vs Index of Instituional Trust in Oceania",
             color_continuous_scale='sunset')
+oceania_exposure_trust.update_layout(plot_bgcolor=colors['background'],
+    paper_bgcolor=colors['background'],
+    font_color=colors['text'])
 oceania_exposure_trust.show()
 
 
@@ -472,6 +507,9 @@ oceania_exposure_income = px.bar(covid_impactOceania, x='Country name', y='Index
              labels={'Index of exposure to COVID-19  infections in other countries as of March 31':'Index Covid-19 Exposure'}, height=600, title= "Index Covid-19 Exposure vs GINI Coefficient of Income in Oceania",
             color_continuous_scale='tealgrn'
             )
+oceania_exposure_income.update_layout(plot_bgcolor=colors['background'],
+    paper_bgcolor=colors['background'],
+    font_color=colors['text'])
 oceania_exposure_income.show()
 
 # In[39]:
@@ -488,7 +526,9 @@ fig_10countries = px.bar(datasort_10countries,
                          color='Continent'
                          )
                          
-fig_10countries.update_layout(title_text='Top10 Countries: Covid-19 Deaths')
+fig_10countries.update_layout(title_text='Top10 Countries: Covid-19 Deaths',plot_bgcolor=colors['background'],
+    paper_bgcolor=colors['background'],
+    font_color=colors['text'])
 fig_10countries.show()
 
 #TOP 10 Countries of Europe: Covid-19 Deaths
@@ -503,7 +543,9 @@ fig_10countries_europe = px.bar(datasort_10countries_europe,
                          color='Continent'
                          )
                          
-fig_10countries_europe.update_layout(title_text='Top10 Countries of Europe: Covid-19 Deaths')
+fig_10countries_europe.update_layout(title_text='Top10 Countries of Europe: Covid-19 Deaths',plot_bgcolor=colors['background'],
+    paper_bgcolor=colors['background'],
+    font_color=colors['text'])
 fig_10countries_europe.show()
 
 
@@ -520,7 +562,9 @@ fig_10countries_asia = px.bar(datasort_10countries_asia,
                          color='Continent'
                          )
                          
-fig_10countries_asia.update_layout(title_text='Top10 Countries of Asia: Covid-19 Deaths')
+fig_10countries_asia.update_layout(title_text='Top10 Countries of Asia: Covid-19 Deaths',plot_bgcolor=colors['background'],
+    paper_bgcolor=colors['background'],
+    font_color=colors['text'])
 fig_10countries_asia.show()
 
 
@@ -536,7 +580,9 @@ fig_10countries_africa = px.bar(datasort_10countries_africa,
                          color='Continent'
                          )
                          
-fig_10countries_africa.update_layout(title_text='Top10 Countries of Africa: Covid-19 Deaths')
+fig_10countries_africa.update_layout(title_text='Top10 Countries of Africa: Covid-19 Deaths',plot_bgcolor=colors['background'],
+    paper_bgcolor=colors['background'],
+    font_color=colors['text'])
 fig_10countries_africa.show()
 
 
@@ -552,7 +598,9 @@ fig_10countries_northamerica = px.bar(datasort_10countries_northamerica,
                          color='Continent'
                          )
                          
-fig_10countries_northamerica.update_layout(title_text='Top10 Countries of North America: Covid-19 Deaths')
+fig_10countries_northamerica.update_layout(title_text='Top10 Countries of North America: Covid-19 Deaths',plot_bgcolor=colors['background'],
+    paper_bgcolor=colors['background'],
+    font_color=colors['text'])
 fig_10countries_northamerica.show()
 
 
@@ -569,7 +617,9 @@ fig_10countries_southamerica = px.bar(datasort_10countries_southamerica,
                          color='Continent'
                          )
                          
-fig_10countries_southamerica.update_layout(title_text='Top10 Countries of South America: Covid-19 Deaths')
+fig_10countries_southamerica.update_layout(title_text='Top10 Countries of South America: Covid-19 Deaths',plot_bgcolor=colors['background'],
+    paper_bgcolor=colors['background'],
+    font_color=colors['text'])
 fig_10countries_southamerica.show()
 
 
@@ -586,7 +636,9 @@ fig_10countries_oceania = px.bar(datasort_10countries_oceania,
                          color='Continent'
                          )
                          
-fig_10countries_oceania.update_layout(title_text='Top10 Countries of Oceania: Covid-19 Deaths')
+fig_10countries_oceania.update_layout(title_text='Top10 Countries of Oceania: Covid-19 Deaths',plot_bgcolor=colors['background'],
+    paper_bgcolor=colors['background'],
+    font_color=colors['text'])
 fig_10countries_oceania.show()
 
 

@@ -728,7 +728,7 @@ app.layout = html.Div([
 
 @app.callback(
     Output('example-graph', 'fig_10countries'),
-   [Input(component_id='continent_drop', component_property='continents')]
+   [Input(component_id='continent_drop', component_property='value')]
 )
 def select_continent(value):
     if value == 'continents[0]':

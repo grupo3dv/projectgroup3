@@ -625,8 +625,9 @@ app.layout = html.Div(children=[
 
     html.Div(children='''
         Example of html Container
-    '''),
-])
+    ''')
+    ]),
+
     html.Div([
     
     dcc.Dropdown(

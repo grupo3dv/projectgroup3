@@ -634,7 +634,7 @@ continents = [dict(label=continent ,value=continent_id) for continent, continent
 
 app = dash.Dash(__name__, 
              suppress_callback_exceptions=True,    
-             external_stylesheets=[dbc.themes.CYBORG],)
+             external_stylesheets=[dbc.themes.VAPOR],)
 
 server = app.server
 

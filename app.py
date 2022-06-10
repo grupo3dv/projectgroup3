@@ -137,7 +137,22 @@ ax1.axis('equal')
 
 plt.show()
 
+#Pie-Chart:Female Leaders by Continent
 
+pie_chart_labelsf = covid_impact2['Continent']
+pie_chart_valuesf = covid_impact2['Female head of government']
+
+pie_chart_dataf = dict(type='pie',
+                    labels=pie_chart_labelsf,
+                    values=pie_chart_valuesf,
+                    name='Pie Continent'
+                    )
+
+pie_chart_layoutf = dict (title=dict(text='Percentage of Female Leaders per Continent')
+                  )
+pie_chart_female = go.Figure(data=pie_chart_dataf, layout=pie_chart_layoutf)
+
+pie_chart_female.show()
 # In[15]:
 
 
@@ -629,7 +644,9 @@ app.layout = html.Div([
     ]),
     
     html.Div(dcc.Graph(id='bubble_age_deaths_graph',figure=bubble_age_deaths)),
-                    
+    
+    html.Div(dcc.Graph(id='pie_chart_femaleleaders',figure=pie_chart_female)),
+    
     html.Div([
     
     html.Label(['Choose a Continent to analyse:'],style={'font-weight': 'bold'}),

@@ -655,8 +655,21 @@ app.layout = html.Div([
     ),
     ]),
     
-    html.Div(dcc.Graph(id='exposure_trust_graph',figure={}))
+    html.Div(dcc.Graph(id='exposure_trust_graph',figure={})),
 
+    html.Div([
+    
+    html.Label(['Choose a Continent to analyse:'],style={'font-weight': 'bold'}),
+    
+    dcc.Dropdown(
+    id='continent_drop3',
+    options= continents,
+    value=0,
+    multi=False
+    ),
+    ]),
+    
+    html.Div(dcc.Graph(id='exposure_income_graph',figure={}))
     ])
 
 
@@ -709,6 +722,29 @@ def exposure_trust_continent(value):
         fig = oceania_exposure_trust
         return fig
 
+@app.callback(
+    Output('exposure_income_graph', 'figure'),
+   [Input(component_id='continent_drop3', component_property='value')]
+)
+def exposure_income_continent(value):
+    if value == 0:
+        fig = northamerica_exposure_income
+        return fig
+    elif value == 1:
+        fig = africa_exposure_income
+        return fig
+    elif value == 2:
+        fig = asia_exposure_income
+        return fig
+    elif value == 3:
+        fig = europe_exposure_income
+        return fig
+    elif value == 4:
+        fig = southamerica_exposure_income
+        return fig
+    else:
+        fig = oceania_exposure_income
+        return fig
 
 if __name__ == '__main__':
     app.run_server(debug=True)

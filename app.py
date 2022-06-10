@@ -102,7 +102,10 @@ covid_impact2.isnull().sum()
 # Columns datatypes
 covid_impact2.info()
 
-
+colors = {
+    'background': '#111111',
+    'text': '#7FDBFF'
+}
 # In[12]:
 
 
@@ -279,7 +282,11 @@ fig_10countries = px.bar(datasort_10countries,
                          color='Continent'
                          )
                          
-fig_10countries.update_layout(title_text='Top10 Countries: Covid-19 Deaths')
+fig_10countries.update_layout(title_text='Top10 Countries: Covid-19 Deaths', plot_bgcolor=colors['background'],
+    paper_bgcolor=colors['background'],
+    font_color=colors['text']
+ )
+
 fig_10countries.show()
 
 # In[21]:
@@ -629,10 +636,7 @@ continents = [dict(label=continent ,value=continent_id) for continent, continent
 #fullnames = drivers['forename'] + str(" ") + drivers['surname']
 #pilot_names = [dict(label=fullname, value=driver_id) for fullname, driver_id in zip(fullnames, drivers.index)]
 
-colors = {
-    'background': '#111111',
-    'text': '#7FDBFF'
-}
+
 
 
 #App itself
@@ -652,12 +656,7 @@ app.layout = html.Div([
 
     ]),
     
-    html.Div(dcc.Graph(id='bubble_age_deaths_graph',figure= {'layout': {
-                'plot_bgcolor': colors['background'],
-                'paper_bgcolor': colors['background'],
-                'font': {
-                    'color': colors['text']
-                }}})),
+    html.Div(dcc.Graph(id='bubble_age_deaths_graph',figure= bubble_age_deaths)),
     
     html.Div(dcc.Graph(id='pie_chart_femaleleaders',figure=pie_chart_female)),
     

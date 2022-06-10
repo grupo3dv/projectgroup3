@@ -224,19 +224,20 @@ scatter_fig.show()
 # In[18]:
 
 
-#TOP 10 Countries: Population 2020
+#TOP 10 Countries: Covid-19 Deaths
 
-data_10countriespop = covid_impact2.loc[:,['Country name','Population 2020']]
+data_10countries = covid_impact2.loc[:,['Country name','COVID-19 deaths per 100,000 population in 2020','Continent']]
 
-datasort_10countriespop = data_10countriespop.sort_values(ascending=False, by='Population 2020').head(10)
+datasort_10countries = data_10countries.sort_values(ascending=False, by='COVID-19 deaths per 100,000 population in 2020')
 
-fig_10countriespop = px.bar(datasort_10countriespop, 
+fig_10countries = px.bar(datasort_10countries, 
                          x='Country name', 
-                         y='Population 2020', 
+                         y='COVID-19 deaths per 100,000 population in 2020',
+                         color='Continent'
                          )
                          
-fig_10countriespop.update_layout(title_text='Top10 Countries: Population 2020')
-fig_10countriespop.show()
+fig_10countries.update_layout(title_text='Top10 Countries: Covid-19 Deaths')
+fig_10countries.show()
 
 
 # In[19]:
@@ -633,24 +634,38 @@ app.layout = html.Div([
 
     html.Div([
     
+    html.Label(['Choose a Continent to analyse:'],style={'font-weight': 'bold'}),
+    
     dcc.Dropdown(
-    id='names_drop',
+    id='continent_drop',
     options= continents,
-    value=1,
+    value=continents[0],
     multi=False
     ),
     
-    dcc.Graph(
-    id='example-graph',
-    figure=fig_10countriespop
-    )
+    html.Div(dcc.Graph(id='example-graph',figure=fig_10countriespop)),
 
+    ]),
 
+])
+                
 ])
             
 ])
 
-
+#@app.callback(
+ #   Output('example-graph', 'fig_10countriespop'),
+  #  [Input(component_id='continent_drop', component_property='continents[0]')]
+#)
+#def select_continent(value):
+ #   if value == 'continents[0]':
+  #      fig = fig_10countriespop np.where(continents == continents[0]
+   #     return fig
+    #else:
+     #   fig1 = px.line(x=df1['Letter'], y=df1['Column1'], color=px.Constant('Column1'),
+      #               labels=dict(x='Letter', y='Column1', color='Letter'))
+       # fig1.add_bar(x=df1['Letter'], y=df1['Column2'], name='Letter')
+        #return fig1
 
 
 if __name__ == '__main__':

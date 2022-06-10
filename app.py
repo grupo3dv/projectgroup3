@@ -645,6 +645,7 @@ fig_10countries_oceania.show()
 
 
 
+
 # In[41]:
 continents_names = covid_impact2['Continent'].unique()
 continents = [dict(label=continent ,value=continent_id) for continent, continent_id in zip(continents_names, covid_impact2.index)]

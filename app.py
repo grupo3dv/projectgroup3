@@ -239,6 +239,105 @@ fig_10countries = px.bar(datasort_10countries,
 fig_10countries.update_layout(title_text='Top10 Countries: Covid-19 Deaths')
 fig_10countries.show()
 
+#TOP 10 Countries of Europe: Covid-19 Deaths
+
+data_10countries_europe = covid_impactEurope.loc[:,['Country name','COVID-19 deaths per 100,000 population in 2020','Continent']]
+
+datasort_10countries_europe = data_10countries_europe.sort_values(ascending=False, by='COVID-19 deaths per 100,000 population in 2020').head(10)
+
+fig_10countries_europe = px.bar(datasort_10countries_europe, 
+                         x='Country name', 
+                         y='COVID-19 deaths per 100,000 population in 2020',
+                         color='Continent'
+                         )
+                         
+fig_10countries_europe.update_layout(title_text='Top10 Countries of Europe: Covid-19 Deaths')
+fig_10countries_europe.show()
+
+
+
+#TOP 10 Countries of Asia: Covid-19 Deaths
+
+data_10countries_asia = covid_impactAsia.loc[:,['Country name','COVID-19 deaths per 100,000 population in 2020','Continent']]
+
+datasort_10countries_asia = data_10countries_asia.sort_values(ascending=False, by='COVID-19 deaths per 100,000 population in 2020').head(10)
+
+fig_10countries_asia = px.bar(datasort_10countries_asia, 
+                         x='Country name', 
+                         y='COVID-19 deaths per 100,000 population in 2020',
+                         color='Continent'
+                         )
+                         
+fig_10countries_asia.update_layout(title_text='Top10 Countries of Asia: Covid-19 Deaths')
+fig_10countries_asia.show()
+
+
+#TOP 10 Countries of Africa: Covid-19 Deaths
+
+data_10countries_africa = covid_impactAfrica.loc[:,['Country name','COVID-19 deaths per 100,000 population in 2020','Continent']]
+
+datasort_10countries_africa = data_10countries_africa.sort_values(ascending=False, by='COVID-19 deaths per 100,000 population in 2020').head(10)
+
+fig_10countries_africa = px.bar(datasort_10countries_africa, 
+                         x='Country name', 
+                         y='COVID-19 deaths per 100,000 population in 2020',
+                         color='Continent'
+                         )
+                         
+fig_10countries_africa.update_layout(title_text='Top10 Countries of Africa: Covid-19 Deaths')
+fig_10countries_africa.show()
+
+
+#TOP 10 Countries of North America: Covid-19 Deaths
+
+data_10countries_northamerica = covid_impactNorthAmerica.loc[:,['Country name','COVID-19 deaths per 100,000 population in 2020','Continent']]
+
+datasort_10countries_northamerica = data_10countries_northamerica.sort_values(ascending=False, by='COVID-19 deaths per 100,000 population in 2020').head(10)
+
+fig_10countries_northamerica = px.bar(datasort_10countries_northamerica, 
+                         x='Country name', 
+                         y='COVID-19 deaths per 100,000 population in 2020',
+                         color='Continent'
+                         )
+                         
+fig_10countries_northamerica.update_layout(title_text='Top10 Countries of North America: Covid-19 Deaths')
+fig_10countries_northamerica.show()
+
+
+
+#TOP 10 Countries of South America: Covid-19 Deaths
+
+data_10countries_southamerica = covid_impactSouthAmerica.loc[:,['Country name','COVID-19 deaths per 100,000 population in 2020','Continent']]
+
+datasort_10countries_southamerica = data_10countries_southamerica.sort_values(ascending=False, by='COVID-19 deaths per 100,000 population in 2020').head(10)
+
+fig_10countries_southamerica = px.bar(datasort_10countries_southamerica, 
+                         x='Country name', 
+                         y='COVID-19 deaths per 100,000 population in 2020',
+                         color='Continent'
+                         )
+                         
+fig_10countries_southamerica.update_layout(title_text='Top10 Countries of South America: Covid-19 Deaths')
+fig_10countries_southamerica.show()
+
+
+
+#TOP 10 Countries of Oceania: Covid-19 Deaths
+
+data_10countries_oceania = covid_impactOceania.loc[:,['Country name','COVID-19 deaths per 100,000 population in 2020','Continent']]
+
+datasort_10countries_oceania = data_10countries_oceania.sort_values(ascending=False, by='COVID-19 deaths per 100,000 population in 2020').head(10)
+
+fig_10countries_oceania = px.bar(datasort_10countries_oceania, 
+                         x='Country name', 
+                         y='COVID-19 deaths per 100,000 population in 2020',
+                         color='Continent'
+                         )
+                         
+fig_10countries_oceania.update_layout(title_text='Top10 Countries of Oceania: Covid-19 Deaths')
+fig_10countries_oceania.show()
+
+
 
 # In[19]:
 
@@ -591,21 +690,6 @@ pie_chart_fig_oce.show()
 #fig_teste.show()
 
 
-# In[40]:
-
-
-data = covid_impact2.loc[:,['Country name','Population 2020','Population 2019']].sort_values(by='Population 2019',
-                                                                                   ascending=False).head(10)
-
-# plotting go figure for grouped bar chart
-
-fig_population = go.Figure(data=[go.Bar(name='Population 2019',x=data['Country name'],y=data['Population 2019']),
-                      go.Bar(name='Population 2020',x=data['Country name'],y=data['Population 2020'])
-                     ])
-
-fig_population.update_layout(barmode='group', title_text='Top10 countries with most population')
-fig_population.show()
-
 
 # In[41]:
 continents_names = covid_impact2['Continent'].unique()
@@ -650,20 +734,29 @@ app.layout = html.Div([
 
 
 
-#@app.callback(
- #   Output('example-graph', 'fig_10countries'),
-  #  [Input(component_id='continent_drop', component_property='continents[0]')]
-#)
-#def select_continent(value):
- #   if value == 'continents[0]':
-  #      fig = fig_10countries np.where(continents == continents[0]
-   #     return fig
-    #else:
-     #   fig1 = px.line(x=df1['Letter'], y=df1['Column1'], color=px.Constant('Column1'),
-      #               labels=dict(x='Letter', y='Column1', color='Letter'))
-       # fig1.add_bar(x=df1['Letter'], y=df1['Column2'], name='Letter')
-        #return fig1
-
+@app.callback(
+    Output('example-graph', 'fig_10countries'),
+   [Input(component_id='continent_drop', component_property='continents')]
+)
+def select_continent(value):
+    if value == 'continents[0]':
+        fig = fig_10countries_northamerica
+        return fig
+    elif: value == 'continents[1]':
+        fig = fig_10countries_africa
+        return fig
+    elif: value == 'continents[2]':
+        fig = fig_10countries_asia
+        return fig
+    elif: value == 'continents[3]':
+        fig = fig_10countries_europe
+        return fig
+    elif: value == 'continents[4]':
+        fig = fig_10countries_southamerica
+        return fig
+    else:
+        fig = fig_10countries_oceania
+        return fig
 
 if __name__ == '__main__':
     app.run_server(debug=True)

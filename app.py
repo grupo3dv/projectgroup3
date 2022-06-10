@@ -103,8 +103,8 @@ covid_impact2.isnull().sum()
 covid_impact2.info()
 
 colors = {
-    'background': '#222',
-    'text': '#fff'
+    'background': '#272b30',
+    'text': '#aaa'
 }
 # In[12]:
 

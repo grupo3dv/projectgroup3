@@ -657,7 +657,7 @@ app.layout = html.Div([
                 'paper_bgcolor': colors['background'],
                 'font': {
                     'color': colors['text']
-                }}})),
+                }})),
     
     html.Div(dcc.Graph(id='pie_chart_femaleleaders',figure=pie_chart_female)),
     

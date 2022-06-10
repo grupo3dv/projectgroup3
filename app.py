@@ -626,29 +626,25 @@ app.layout = html.Div(children=[
     html.Div(children='''
         Example of html Container
     '''),
-
-    dcc.Graph(
-        id='example-graph',
-        figure=fig_10countriespop
-    ) ,
+    
+    html.Div([
+    
     dcc.Dropdown(
-        id='names_drop',
-        options= [covid_impact2['Continent'][0:5]],
-        value=1,
-        multi=False
+    id='names_drop',
+    options= [covid_impact2['Continent'][0:5]],
+    value=1,
+    multi=False
     ),
+    
+    dcc.Graph(
+    id='example-graph',
+    figure=fig_10countriespop
+    )
+
+
 ])
 
 
-@app.callback(
-    Output("graph", "figure"), 
-    Input("checklist", "value"))
-def update_bar_chart(covid_impact2):
-    covid_impact2 = px.data.gapminder() # replace with your own data source
-    mask = covid_impact2
-    fig = px.bar(covid_impact2[mask], 
-        x='Country name', y='Population 2020')
-    return fig
 
 
 if __name__ == '__main__':

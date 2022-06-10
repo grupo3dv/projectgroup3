@@ -715,7 +715,7 @@ app.layout = html.Div([
     dcc.Dropdown(
     id='continent_drop',
     options= continents,
-    value=continents[0],
+    value=0,
     multi=False
     ),
     ]),
@@ -727,23 +727,23 @@ app.layout = html.Div([
 
 
 @app.callback(
-    Output('example-graph', 'fig_10countries'),
+    Output('example-graph', 'figure'),
    [Input(component_id='continent_drop', component_property='value')]
 )
 def select_continent(value):
-    if value == 'continents[0]':
+    if value == 0:
         fig = fig_10countries_northamerica
         return fig
-    elif value == 'continents[1]':
+    elif value == 1:
         fig = fig_10countries_africa
         return fig
-    elif value == 'continents[2]':
+    elif value == 2:
         fig = fig_10countries_asia
         return fig
-    elif value == 'continents[3]':
+    elif value == 3:
         fig = fig_10countries_europe
         return fig
-    elif value == 'continents[4]':
+    elif value == 4:
         fig = fig_10countries_southamerica
         return fig
     else:

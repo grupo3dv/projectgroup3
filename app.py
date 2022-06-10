@@ -634,7 +634,7 @@ app.layout = html.Div([
     
     dcc.Dropdown(
     id='names_drop',
-    options= [covid_impact2['Continent'][0:5]],
+    options= continents,
     value=1,
     multi=False
     ),

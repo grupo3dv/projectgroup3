@@ -629,12 +629,17 @@ continents = [dict(label=continent ,value=continent_id) for continent, continent
 #fullnames = drivers['forename'] + str(" ") + drivers['surname']
 #pilot_names = [dict(label=fullname, value=driver_id) for fullname, driver_id in zip(fullnames, drivers.index)]
 
+colors = {
+    'background': '#111111',
+    'text': '#7FDBFF'
+}
+
 
 #App itself
 
 app = dash.Dash(__name__, 
              suppress_callback_exceptions=True,    
-             external_stylesheets=[dbc.themes.LUX],)
+             external_stylesheets=[dbc.themes.DARKLY],)
 
 server = app.server
 
@@ -647,7 +652,12 @@ app.layout = html.Div([
 
     ]),
     
-    html.Div(dcc.Graph(id='bubble_age_deaths_graph',figure=bubble_age_deaths)),
+    html.Div(dcc.Graph(id='bubble_age_deaths_graph',figure={bubble_age_deaths,'layout': {
+                'plot_bgcolor': colors['background'],
+                'paper_bgcolor': colors['background'],
+                'font': {
+                    'color': colors['text']
+                }}})),
     
     html.Div(dcc.Graph(id='pie_chart_femaleleaders',figure=pie_chart_female)),
     

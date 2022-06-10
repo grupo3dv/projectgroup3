@@ -644,19 +644,19 @@ app.layout = html.Div([
     ),
     ]),
     
-    html.Div(dcc.Graph(id='example-graph',figure=fig_10countriespop)),
+    html.Div(dcc.Graph(id='example-graph',figure=fig_10countries)),
 
     ])
 
 
 
 #@app.callback(
- #   Output('example-graph', 'fig_10countriespop'),
+ #   Output('example-graph', 'fig_10countries'),
   #  [Input(component_id='continent_drop', component_property='continents[0]')]
 #)
 #def select_continent(value):
  #   if value == 'continents[0]':
-  #      fig = fig_10countriespop np.where(continents == continents[0]
+  #      fig = fig_10countries np.where(continents == continents[0]
    #     return fig
     #else:
      #   fig1 = px.line(x=df1['Letter'], y=df1['Column1'], color=px.Constant('Column1'),

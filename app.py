@@ -633,7 +633,7 @@ app.layout = html.Div([
     html.Label(['Choose a Continent to analyse:'],style={'font-weight': 'bold'}),
     
     dcc.Dropdown(
-    id='continent_drop',
+    id='continent_drop1',
     options= continents,
     value=0,
     multi=False
@@ -648,7 +648,7 @@ app.layout = html.Div([
     html.Label(['Choose a Continent to analyse:'],style={'font-weight': 'bold'}),
     
     dcc.Dropdown(
-    id='continent_drop',
+    id='continent_drop2',
     options= continents,
     value=0,
     multi=False
@@ -663,7 +663,7 @@ app.layout = html.Div([
 
 @app.callback(
     Output('covid_deaths_graph', 'figure'),
-   [Input(component_id='continent_drop', component_property='value')]
+   [Input(component_id='continent_drop1', component_property='value')]
 )
 def covid_death_continent(value):
     if value == 0:
@@ -687,7 +687,7 @@ def covid_death_continent(value):
 
 @app.callback(
     Output('exposure_trust_graph', 'figure'),
-   [Input(component_id='continent_drop', component_property='value')]
+   [Input(component_id='continent_drop2', component_property='value')]
 )
 def exposure_trust_continent(value):
     if value == 0:

@@ -224,119 +224,6 @@ scatter_fig.show()
 # In[18]:
 
 
-#TOP 10 Countries: Covid-19 Deaths
-
-data_10countries = covid_impact2.loc[:,['Country name','COVID-19 deaths per 100,000 population in 2020','Continent']]
-
-datasort_10countries = data_10countries.sort_values(ascending=False, by='COVID-19 deaths per 100,000 population in 2020')
-
-fig_10countries = px.bar(datasort_10countries, 
-                         x='Country name', 
-                         y='COVID-19 deaths per 100,000 population in 2020',
-                         color='Continent'
-                         )
-                         
-fig_10countries.update_layout(title_text='Top10 Countries: Covid-19 Deaths')
-fig_10countries.show()
-
-#TOP 10 Countries of Europe: Covid-19 Deaths
-
-data_10countries_europe = covid_impactEurope.loc[:,['Country name','COVID-19 deaths per 100,000 population in 2020','Continent']]
-
-datasort_10countries_europe = data_10countries_europe.sort_values(ascending=False, by='COVID-19 deaths per 100,000 population in 2020').head(10)
-
-fig_10countries_europe = px.bar(datasort_10countries_europe, 
-                         x='Country name', 
-                         y='COVID-19 deaths per 100,000 population in 2020',
-                         color='Continent'
-                         )
-                         
-fig_10countries_europe.update_layout(title_text='Top10 Countries of Europe: Covid-19 Deaths')
-fig_10countries_europe.show()
-
-
-
-#TOP 10 Countries of Asia: Covid-19 Deaths
-
-data_10countries_asia = covid_impactAsia.loc[:,['Country name','COVID-19 deaths per 100,000 population in 2020','Continent']]
-
-datasort_10countries_asia = data_10countries_asia.sort_values(ascending=False, by='COVID-19 deaths per 100,000 population in 2020').head(10)
-
-fig_10countries_asia = px.bar(datasort_10countries_asia, 
-                         x='Country name', 
-                         y='COVID-19 deaths per 100,000 population in 2020',
-                         color='Continent'
-                         )
-                         
-fig_10countries_asia.update_layout(title_text='Top10 Countries of Asia: Covid-19 Deaths')
-fig_10countries_asia.show()
-
-
-#TOP 10 Countries of Africa: Covid-19 Deaths
-
-data_10countries_africa = covid_impactAfrica.loc[:,['Country name','COVID-19 deaths per 100,000 population in 2020','Continent']]
-
-datasort_10countries_africa = data_10countries_africa.sort_values(ascending=False, by='COVID-19 deaths per 100,000 population in 2020').head(10)
-
-fig_10countries_africa = px.bar(datasort_10countries_africa, 
-                         x='Country name', 
-                         y='COVID-19 deaths per 100,000 population in 2020',
-                         color='Continent'
-                         )
-                         
-fig_10countries_africa.update_layout(title_text='Top10 Countries of Africa: Covid-19 Deaths')
-fig_10countries_africa.show()
-
-
-#TOP 10 Countries of North America: Covid-19 Deaths
-
-data_10countries_northamerica = covid_impactNorthAmerica.loc[:,['Country name','COVID-19 deaths per 100,000 population in 2020','Continent']]
-
-datasort_10countries_northamerica = data_10countries_northamerica.sort_values(ascending=False, by='COVID-19 deaths per 100,000 population in 2020').head(10)
-
-fig_10countries_northamerica = px.bar(datasort_10countries_northamerica, 
-                         x='Country name', 
-                         y='COVID-19 deaths per 100,000 population in 2020',
-                         color='Continent'
-                         )
-                         
-fig_10countries_northamerica.update_layout(title_text='Top10 Countries of North America: Covid-19 Deaths')
-fig_10countries_northamerica.show()
-
-
-
-#TOP 10 Countries of South America: Covid-19 Deaths
-
-data_10countries_southamerica = covid_impactSouthAmerica.loc[:,['Country name','COVID-19 deaths per 100,000 population in 2020','Continent']]
-
-datasort_10countries_southamerica = data_10countries_southamerica.sort_values(ascending=False, by='COVID-19 deaths per 100,000 population in 2020').head(10)
-
-fig_10countries_southamerica = px.bar(datasort_10countries_southamerica, 
-                         x='Country name', 
-                         y='COVID-19 deaths per 100,000 population in 2020',
-                         color='Continent'
-                         )
-                         
-fig_10countries_southamerica.update_layout(title_text='Top10 Countries of South America: Covid-19 Deaths')
-fig_10countries_southamerica.show()
-
-
-
-#TOP 10 Countries of Oceania: Covid-19 Deaths
-
-data_10countries_oceania = covid_impactOceania.loc[:,['Country name','COVID-19 deaths per 100,000 population in 2020','Continent']]
-
-datasort_10countries_oceania = data_10countries_oceania.sort_values(ascending=False, by='COVID-19 deaths per 100,000 population in 2020').head(10)
-
-fig_10countries_oceania = px.bar(datasort_10countries_oceania, 
-                         x='Country name', 
-                         y='COVID-19 deaths per 100,000 population in 2020',
-                         color='Continent'
-                         )
-                         
-fig_10countries_oceania.update_layout(title_text='Top10 Countries of Oceania: Covid-19 Deaths')
-fig_10countries_oceania.show()
-
 
 
 # In[19]:
@@ -679,15 +566,120 @@ pie_chart_fig_oce.show()
 #teste
 
 
-#fig_teste = px.scatter(covid_impact2), 
- #                x='Median age', 
-  #               y='Gini coefficient of income', 
-   #              color='Country name',
-    #             trendline='ols',
-     #            trendline_scope='overall',
-      #           trendline_color_override='black'
-       #         )
-#fig_teste.show()
+#TOP 10 Countries: Covid-19 Deaths
+
+data_10countries = covid_impact2.loc[:,['Country name','COVID-19 deaths per 100,000 population in 2020','Continent']]
+
+datasort_10countries = data_10countries.sort_values(ascending=False, by='COVID-19 deaths per 100,000 population in 2020')
+
+fig_10countries = px.bar(datasort_10countries, 
+                         x='Country name', 
+                         y='COVID-19 deaths per 100,000 population in 2020',
+                         color='Continent'
+                         )
+                         
+fig_10countries.update_layout(title_text='Top10 Countries: Covid-19 Deaths')
+fig_10countries.show()
+
+#TOP 10 Countries of Europe: Covid-19 Deaths
+
+data_10countries_europe = covid_impactEurope.loc[:,['Country name','COVID-19 deaths per 100,000 population in 2020','Continent']]
+
+datasort_10countries_europe = data_10countries_europe.sort_values(ascending=False, by='COVID-19 deaths per 100,000 population in 2020').head(10)
+
+fig_10countries_europe = px.bar(datasort_10countries_europe, 
+                         x='Country name', 
+                         y='COVID-19 deaths per 100,000 population in 2020',
+                         color='Continent'
+                         )
+                         
+fig_10countries_europe.update_layout(title_text='Top10 Countries of Europe: Covid-19 Deaths')
+fig_10countries_europe.show()
+
+
+
+#TOP 10 Countries of Asia: Covid-19 Deaths
+
+data_10countries_asia = covid_impactAsia.loc[:,['Country name','COVID-19 deaths per 100,000 population in 2020','Continent']]
+
+datasort_10countries_asia = data_10countries_asia.sort_values(ascending=False, by='COVID-19 deaths per 100,000 population in 2020').head(10)
+
+fig_10countries_asia = px.bar(datasort_10countries_asia, 
+                         x='Country name', 
+                         y='COVID-19 deaths per 100,000 population in 2020',
+                         color='Continent'
+                         )
+                         
+fig_10countries_asia.update_layout(title_text='Top10 Countries of Asia: Covid-19 Deaths')
+fig_10countries_asia.show()
+
+
+#TOP 10 Countries of Africa: Covid-19 Deaths
+
+data_10countries_africa = covid_impactAfrica.loc[:,['Country name','COVID-19 deaths per 100,000 population in 2020','Continent']]
+
+datasort_10countries_africa = data_10countries_africa.sort_values(ascending=False, by='COVID-19 deaths per 100,000 population in 2020').head(10)
+
+fig_10countries_africa = px.bar(datasort_10countries_africa, 
+                         x='Country name', 
+                         y='COVID-19 deaths per 100,000 population in 2020',
+                         color='Continent'
+                         )
+                         
+fig_10countries_africa.update_layout(title_text='Top10 Countries of Africa: Covid-19 Deaths')
+fig_10countries_africa.show()
+
+
+#TOP 10 Countries of North America: Covid-19 Deaths
+
+data_10countries_northamerica = covid_impactNorthAmerica.loc[:,['Country name','COVID-19 deaths per 100,000 population in 2020','Continent']]
+
+datasort_10countries_northamerica = data_10countries_northamerica.sort_values(ascending=False, by='COVID-19 deaths per 100,000 population in 2020').head(10)
+
+fig_10countries_northamerica = px.bar(datasort_10countries_northamerica, 
+                         x='Country name', 
+                         y='COVID-19 deaths per 100,000 population in 2020',
+                         color='Continent'
+                         )
+                         
+fig_10countries_northamerica.update_layout(title_text='Top10 Countries of North America: Covid-19 Deaths')
+fig_10countries_northamerica.show()
+
+
+
+#TOP 10 Countries of South America: Covid-19 Deaths
+
+data_10countries_southamerica = covid_impactSouthAmerica.loc[:,['Country name','COVID-19 deaths per 100,000 population in 2020','Continent']]
+
+datasort_10countries_southamerica = data_10countries_southamerica.sort_values(ascending=False, by='COVID-19 deaths per 100,000 population in 2020').head(10)
+
+fig_10countries_southamerica = px.bar(datasort_10countries_southamerica, 
+                         x='Country name', 
+                         y='COVID-19 deaths per 100,000 population in 2020',
+                         color='Continent'
+                         )
+                         
+fig_10countries_southamerica.update_layout(title_text='Top10 Countries of South America: Covid-19 Deaths')
+fig_10countries_southamerica.show()
+
+
+
+#TOP 10 Countries of Oceania: Covid-19 Deaths
+
+data_10countries_oceania = covid_impactOceania.loc[:,['Country name','COVID-19 deaths per 100,000 population in 2020','Continent']]
+
+datasort_10countries_oceania = data_10countries_oceania.sort_values(ascending=False, by='COVID-19 deaths per 100,000 population in 2020').head(10)
+
+fig_10countries_oceania = px.bar(datasort_10countries_oceania, 
+                         x='Country name', 
+                         y='COVID-19 deaths per 100,000 population in 2020',
+                         color='Continent'
+                         )
+                         
+fig_10countries_oceania.update_layout(title_text='Top10 Countries of Oceania: Covid-19 Deaths')
+fig_10countries_oceania.show()
+
+
 
 
 

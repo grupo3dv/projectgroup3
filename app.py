@@ -299,26 +299,6 @@ covid_impactEurope = covid_impact2[(covid_impact2['Continent'] == 'Europe')]
 
 # In[24]:
 
-
-#Covid-19 Deaths per European Country
-
-#x_covidimpactEurope = covid_impactEurope['Country name']
-#y_covidimpactEurope = covid_impactEurope['COVID-19 deaths per 100,000 population in 2020']
-
-
-#data_europe = dict(type='bar', x=x_covidimpactEurope, y=y_covidimpactEurope)
-
-#layout_europe = dict(title=dict(text='Europe Data'),
-               #yaxis=dict(title='COVID-19 deaths per 100,000 population in 2020'))
-
-
-
-#fig_europe = go.Figure(data=data_europe, layout=layout_europe)
-
-#fig_europe.update_xaxes(categoryorder='total descending')
-
-#fig_europe.show()
-
 fig_europe1 = px.bar(covid_impactEurope, x='Country name', y='COVID-19 deaths per 100,000 population in 2020',
             hover_data=['Median age'], color='Median age',
             labels={'COVID-19 deaths per 100,000 population in 2020':'COVID-19 deaths per 100,000 population in 2020'}, height=600, title= "COVID-19 deaths VS Median Age", 
@@ -327,21 +307,25 @@ fig_europe1.show()
 
 
 # In[25]:
+# Index of Exposure of Covid-19 infections and Index of Institutional Trust in Europe: Bar Chart with Colored bar
 
-
-# Index of Exposure of Covid-19 infections and Index of Institutional Trust: Bar Chart with Colored bar
-
-fig_index = px.bar(covid_impactEurope, x='Country name', y='Index of exposure to COVID-19  infections in other countries as of March 31',
+europe_exposure_trust = px.bar(covid_impactEurope, x='Country name', y='Index of exposure to COVID-19  infections in other countries as of March 31',
              hover_data=['Index of institutional trust'], color='Index of institutional trust',
              labels={'Index of exposure to COVID-19  infections in other countries as of March 31':'Index of Covid-19 Exposure'}, height=600, title= "Index Covid-19 Exposure vs Index of Instituional Trust",
             color_continuous_scale='sunset')
-fig_index.show()
+europe_exposure_trust.show()
 
 
 # In[26]:
 
+# Index Covid-19 Exposure in the European Continent
 
-# Log of average distance to SARS countries 
+europe_exposure_income = px.bar(covid_impactEurope, x='Country name', y='Index of exposure to COVID-19  infections in other countries as of March 31',
+             hover_data=['Gini coefficient of income'], color='Gini coefficient of income',
+             labels={'Index of exposure to COVID-19  infections in other countries as of March 31':'Index Covid-19 Exposure'}, height=600, title= "Index Covid-19 Exposure in the European Continent",
+            color_continuous_scale='tealgrn'
+            )
+europe_exposure_income.show()
 
 
 # #### Africa
@@ -356,24 +340,14 @@ covid_impactAfrica = covid_impact2[(covid_impact2['Continent'] == 'Africa')]
 
 # In[28]:
 
+# Index of Exposure of Covid-19 infections and Index of Institutional Trust in Africa: Bar Chart with Colored bar
 
-# Africa Covid-19 Related Deaths
+africa_exposure_trust = px.bar(covid_impactAfrica, x='Country name', y='Index of exposure to COVID-19  infections in other countries as of March 31',
+             hover_data=['Index of institutional trust'], color='Index of institutional trust',
+             labels={'Index of exposure to COVID-19  infections in other countries as of March 31':'Index of Covid-19 Exposure'}, height=600, title= "Index Covid-19 Exposure vs Index of Instituional Trust",
+            color_continuous_scale='sunset')
+africa_exposure_trust.show()
 
-x_covidimpactAfrica = covid_impactAfrica['Country name']
-y_covidimpactAfrica = covid_impactAfrica['COVID-19 deaths per 100,000 population in 2020']
-
-data_africa = dict(type='bar', x=x_covidimpactAfrica, y=y_covidimpactAfrica)
-
-layout_africa = dict(title=dict(text='Africa Covid-19 Related Deaths'),
-               yaxis=dict(title='COVID-19 deaths per 100,000 population in 2020'))
-
-
-
-fig_africa = go.Figure(data=data_africa, layout=layout_africa)
-
-fig_africa.update_xaxes(categoryorder='total descending')
-
-fig_africa.show()
 
 
 # In[29]:
@@ -381,12 +355,13 @@ fig_africa.show()
 
 # Index Covid-19 Exposure in the African Continent
 
-fig_africa = px.bar(covid_impactAfrica, x='Country name', y='Index of exposure to COVID-19  infections in other countries as of March 31',
+africa_exposure_income = px.bar(covid_impactAfrica, x='Country name', y='Index of exposure to COVID-19  infections in other countries as of March 31',
              hover_data=['Gini coefficient of income'], color='Gini coefficient of income',
              labels={'Index of exposure to COVID-19  infections in other countries as of March 31':'Index Covid-19 Exposure'}, height=600, title= "Index Covid-19 Exposure in the African Continent",
             color_continuous_scale='tealgrn'
             )
-fig_africa.show()
+africa_exposure_income.show()
+
 
 
 # #### Asia
@@ -402,41 +377,22 @@ covid_impactAsia
 # In[31]:
 
 
-x_covidimpactAsia = covid_impactAsia['Country name']
-y_covidimpactAsia = covid_impactAsia['COVID-19 deaths per 100,000 population in 2020']
+# Index of Exposure of Covid-19 infections and Index of Institutional Trust in Asia: Bar Chart with Colored bar
 
-data_asia = dict(type='bar', x=x_covidimpactAsia, y=y_covidimpactAsia)
+asia_exposure_trust = px.bar(covid_impactAsia, x='Country name', y='Index of exposure to COVID-19  infections in other countries as of March 31',
+             hover_data=['Index of institutional trust'], color='Index of institutional trust',
+             labels={'Index of exposure to COVID-19  infections in other countries as of March 31':'Index of Covid-19 Exposure'}, height=600, title= "Index Covid-19 Exposure vs Index of Instituional Trust",
+            color_continuous_scale='sunset')
+asia_exposure_trust.show()
 
-layout_asia = dict(title=dict(text='Covid-19 Deaths in the Asian Continent'),
-               yaxis=dict(title='COVID-19 deaths per 100,000 population in 2020'))
+# Index Covid-19 Exposure in the Asian Continent
 
-
-
-fig_asia = go.Figure(data=data_asia, layout=layout_asia)
-
-fig_asia.update_xaxes(categoryorder='total descending')
-
-fig_asia.show()
-
-
-# In[32]:
-
-
-# Bubble-Chart: Median age vs Covid-19 Deaths
-
-#figure_age_deaths = px.scatter(covid_impact2, x='Median age', y='COVID-19 deaths per 100,000 population in 2020', size='Population 2020', color='Continent', size_max=100, hover_name='Country name', log_x=True
-                #)
-#figure_age_deaths.update_layout(title_text='Median age VS Covid-19 Deaths per 100,000')
-#figure_age_deaths.show()
-
-
-#Bubble-Chart: Index Covid-19 Exposure VS Income GINI Coefficient
-
-figure_index_GINI_Asia = px.scatter(covid_impactAsia, x='COVID-19 deaths per 100,000 population in 2020', y='Gini coefficient of income', size='Population 2020', color='Country name', size_max=100, hover_name='Country name', log_x=True
-                )
-figure_index_GINI_Asia.update_layout(title_text='Income GINI Coefficient VS Covid-19 Deaths')
-figure_index_GINI_Asia.show()
-
+asia_exposure_income = px.bar(covid_impactAsia, x='Country name', y='Index of exposure to COVID-19  infections in other countries as of March 31',
+             hover_data=['Gini coefficient of income'], color='Gini coefficient of income',
+             labels={'Index of exposure to COVID-19  infections in other countries as of March 31':'Index Covid-19 Exposure'}, height=600, title= "Index Covid-19 Exposure in the Asian Continent",
+            color_continuous_scale='tealgrn'
+            )
+asia_exposure_income.show()
 
 
 
@@ -453,31 +409,22 @@ covid_impactNorthAmerica
 # In[34]:
 
 
-#x_covidimpactNorthAmerica = covid_impactNorthAmerica['Country name']
-#y_covidimpactNorthAmerica = covid_impactNorthAmerica['Index of exposure to COVID-19  infections in other countries as of March 31']
+# Index of Exposure of Covid-19 infections and Index of Institutional Trust in North America: Bar Chart with Colored bar
 
-#data_northamerica = dict(type='bar', x=x_covidimpactNorthAmerica, y=y_covidimpactNorthAmerica)
+northamerica_exposure_trust = px.bar(covid_impactNorthAmerica, x='Country name', y='Index of exposure to COVID-19  infections in other countries as of March 31',
+             hover_data=['Index of institutional trust'], color='Index of institutional trust',
+             labels={'Index of exposure to COVID-19  infections in other countries as of March 31':'Index of Covid-19 Exposure'}, height=600, title= "Index Covid-19 Exposure vs Index of Instituional Trust",
+            color_continuous_scale='sunset')
+northamerica_exposure_trust.show()
 
-#layout_northamerica = dict(title=dict(text='Covid-19 Index Exposure in North America'),
-               #yaxis=dict(title='Index Exposure'))
+# Index Covid-19 Exposure in the North American Continent
 
-
-
-#fig_northamerica = go.Figure(data=data_northamerica, layout=layout_northamerica)
-
-#fig_northamerica.update_xaxes(categoryorder='total descending')
-
-#fig_northamerica.show()
-
-
-
-
-fig_northamerica = px.bar(covid_impactNorthAmerica, x='Country name', y='COVID-19 deaths per 100,000 population in 2020',
-            hover_data=['Gini coefficient of income'], color='Gini coefficient of income',
-            labels={'COVID-19 deaths per 100,000 population in 2020':'COVID-19 deaths per 100,000 population in 2020'}, height=600, title= "COVID-19 deaths in North America", 
-            color_continuous_scale='ylgn')
-fig_northamerica.show()
-
+northamerica_exposure_income = px.bar(covid_impactNorthAmerica, x='Country name', y='Index of exposure to COVID-19  infections in other countries as of March 31',
+             hover_data=['Gini coefficient of income'], color='Gini coefficient of income',
+             labels={'Index of exposure to COVID-19  infections in other countries as of March 31':'Index Covid-19 Exposure'}, height=600, title= "Index Covid-19 Exposure in the North American Continent",
+            color_continuous_scale='tealgrn'
+            )
+northamerica_exposure_income.show()
 
 # #### South-America
 
@@ -492,24 +439,22 @@ covid_impactSouthAmerica
 # In[36]:
 
 
-#Covid-19 Deaths: South America
+# Index of Exposure of Covid-19 infections and Index of Institutional Trust in South America: Bar Chart with Colored bar
 
-x_covidimpactSouthAmerica = covid_impactSouthAmerica['Country name']
-y_covidimpactSouthAmerica = covid_impactSouthAmerica['COVID-19 deaths per 100,000 population in 2020']
+southamerica_exposure_trust = px.bar(covid_impactSouthAmerica, x='Country name', y='Index of exposure to COVID-19  infections in other countries as of March 31',
+             hover_data=['Index of institutional trust'], color='Index of institutional trust',
+             labels={'Index of exposure to COVID-19  infections in other countries as of March 31':'Index of Covid-19 Exposure'}, height=600, title= "Index Covid-19 Exposure vs Index of Instituional Trust",
+            color_continuous_scale='sunset')
+southamerica_exposure_trust.show()
 
-data_southamerica = dict(type='bar', x=x_covidimpactSouthAmerica, y=y_covidimpactSouthAmerica)
+# Index Covid-19 Exposure in the South American Continent
 
-layout_southamerica = dict(title=dict(text='South-America Covid-19 Deaths'),
-               yaxis=dict(title='COVID-19 deaths per 100,000 population in 2020'))
-
-
-
-fig_southamerica = go.Figure(data=data_southamerica, layout=layout_southamerica)
-
-fig_southamerica.update_xaxes(categoryorder='total descending')
-
-fig_southamerica.show()
-
+southamerica_exposure_income = px.bar(covid_impactSouthAmerica, x='Country name', y='Index of exposure to COVID-19  infections in other countries as of March 31',
+             hover_data=['Gini coefficient of income'], color='Gini coefficient of income',
+             labels={'Index of exposure to COVID-19  infections in other countries as of March 31':'Index Covid-19 Exposure'}, height=600, title= "Index Covid-19 Exposure in the South American Continent",
+            color_continuous_scale='tealgrn'
+            )
+southamerica_exposure_income.show()
 
 # #### Oceania
 
@@ -524,47 +469,25 @@ covid_impactOceania
 # In[38]:
 
 
-#x_covidimpactOceania = covid_impactOceania['Country name']
-#y_covidimpactOceania = covid_impactOceania['COVID-19 deaths per 100,000 population in 2020']
+# Index of Exposure of Covid-19 infections and Index of Institutional Trust in Oceania: Bar Chart with Colored bar
 
-#data_oceania = dict(type='bar', x=x_covidimpactOceania, y=y_covidimpactOceania)
-
-#layout_oceania = dict(title=dict(text='South America Data'),
-               #yaxis=dict(title='Covid-19 deaths'))
-
-
-
-#fig_oceania = go.Figure(data=data_oceania, layout=layout_oceania)
-
-#fig_oceania.update_xaxes(categoryorder='total descending')
-
-#fig_oceania.show()
+oceania_exposure_trust = px.bar(covid_impactOceania, x='Country name', y='Index of exposure to COVID-19  infections in other countries as of March 31',
+             hover_data=['Index of institutional trust'], color='Index of institutional trust',
+             labels={'Index of exposure to COVID-19  infections in other countries as of March 31':'Index of Covid-19 Exposure'}, height=600, title= "Index Covid-19 Exposure vs Index of Instituional Trust",
+            color_continuous_scale='sunset')
+oceania_exposure_trust.show()
 
 
-#Pie-chart: Oceania Covid-19 Deaths
+# Index Covid-19 Exposure in the Oceania Continent
 
-
-pie_chart_labels_oce = covid_impactOceania['Country name']
-pie_chart_values_oce = covid_impactOceania['COVID-19 deaths per 100,000 population in 2020']
-
-pie_chart_data_oce = dict(type='pie',
-                    labels=pie_chart_labels_oce,
-                    values=pie_chart_values_oce,
-                    name='Oceania Pie-Charts'
-                    )
-
-pie_chart_layout_oce = dict (title=dict(text='Oceania Covid-19 Deaths')
-                  )
-pie_chart_fig_oce = go.Figure(data=pie_chart_data_oce, layout=pie_chart_layout_oce)
-
-pie_chart_fig_oce.show()
-
+oceania_exposure_income = px.bar(covid_impactOceania, x='Country name', y='Index of exposure to COVID-19  infections in other countries as of March 31',
+             hover_data=['Gini coefficient of income'], color='Gini coefficient of income',
+             labels={'Index of exposure to COVID-19  infections in other countries as of March 31':'Index Covid-19 Exposure'}, height=600, title= "Index Covid-19 Exposure in the Oceania Continent",
+            color_continuous_scale='tealgrn'
+            )
+oceania_exposure_income.show()
 
 # In[39]:
-
-
-#teste
-
 
 #TOP 10 Countries: Covid-19 Deaths
 
@@ -703,9 +626,6 @@ app.layout = html.Div([
     html.Div(children=[
     html.H1(children='PROFILING COUNTRIES WITH RELATION TO COVID-19 DEATHS'),
 
-    html.Div(children='''
-        Example of html Container
-    ''')
     ]),
 
     html.Div([
@@ -720,17 +640,33 @@ app.layout = html.Div([
     ),
     ]),
     
-    html.Div(dcc.Graph(id='example-graph',figure=fig_10countries)),
+    html.Div(dcc.Graph(id='covid_deaths_graph',figure={})),
+
+    ]),
+    
+    html.Div([
+    
+    html.Label(['Choose a Continent to analyse:'],style={'font-weight': 'bold'}),
+    
+    dcc.Dropdown(
+    id='continent_drop',
+    options= continents,
+    value=0,
+    multi=False
+    ),
+    ]),
+    
+    html.Div(dcc.Graph(id='exposure_trust_graph',figure={})),
 
     ])
 
 
 
 @app.callback(
-    Output('example-graph', 'figure'),
+    Output('covid_deaths_graph', 'figure'),
    [Input(component_id='continent_drop', component_property='value')]
 )
-def select_continent(value):
+def covid_death_continent(value):
     if value == 0:
         fig = fig_10countries_northamerica
         return fig
@@ -749,6 +685,31 @@ def select_continent(value):
     else:
         fig = fig_10countries_oceania
         return fig
+
+@app.callback(
+    Output('exposure_trust_graph', 'figure'),
+   [Input(component_id='continent_drop', component_property='value')]
+)
+def exposure_trust_continent(value):
+    if value == 0:
+        fig = northamerica_exposure_trust
+        return fig
+    elif value == 1:
+        fig = africa_exposure_trust
+        return fig
+    elif value == 2:
+        fig = asia_exposure_trust
+        return fig
+    elif value == 3:
+        fig = europe_exposure_trust
+        return fig
+    elif value == 4:
+        fig = southamerica_exposure_trust
+        return fig
+    else:
+        fig = oceania_exposure_trust
+        return fig
+
 
 if __name__ == '__main__':
     app.run_server(debug=True)

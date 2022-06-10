@@ -628,7 +628,7 @@ app.layout = html.Div([
 
     ]),
     
-    html.Div(dcc.Graph(id='covid_deaths_graph',figure=bubble_age_deaths)),
+    html.Div(dcc.Graph(id='bubble_age_deaths_graph',figure=bubble_age_deaths)),
                     
     html.Div([
     

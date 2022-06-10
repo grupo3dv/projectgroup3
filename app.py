@@ -22,6 +22,7 @@ from dash import dcc
 from dash import html
 from dash.dependencies import Input, Output
 from dash import Dash
+import dash_bootstrap_components as dbc
 import matplotlib.pyplot as plt
 from matplotlib import ticker
 
@@ -577,9 +578,7 @@ datasort_10countries_northamerica = data_10countries_northamerica.sort_values(as
 fig_10countries_northamerica = px.bar(datasort_10countries_northamerica, 
                          x='Country name', 
                          y='COVID-19 deaths per 100,000 population in 2020',
-                         color='Continent',
-                         template="plotly_dark").update_layout(
-    {"plot_bgcolor": "rgba(0, 0, 0, 0)", "paper_bgcolor": "rgba(0, 0, 0, 0)"}
+                         color='Continent'
                          )
                          
 fig_10countries_northamerica.update_layout(title_text='Top10 Countries of North America: Covid-19 Deaths')
@@ -633,11 +632,14 @@ continents = [dict(label=continent ,value=continent_id) for continent, continent
 
 #App itself
 
-app = dash.Dash(__name__)
+app = dash.Dash(__name__, 
+             suppress_callback_exceptions=True,    
+             external_stylesheets=[dbc.themes.CYBORG],)
 
 server = app.server
 
-#test
+app.title = "PROFILING COUNTRIES WITH RELATION TO COVID-19 DEATHS"
+
 app.layout = html.Div([
     
     html.Div(children=[

@@ -267,18 +267,18 @@ pie_chart_fig.show()
 
 #TOP 10 Countries: Covid-19 Deaths
 
-data_10countries = covid_impact2.loc[:,['Country name','COVID-19 deaths per 100,000 population in 2020']]
+data_10countries = covid_impact2.loc[:,['Country name','COVID-19 deaths per 100,000 population in 2020','Continent']]
 
-datasort_10countries = data_10countries.sort_values(ascending=False, by='COVID-19 deaths per 100,000 population in 2020').head(10)
+datasort_10countries = data_10countries.sort_values(ascending=False, by='COVID-19 deaths per 100,000 population in 2020')
 
 fig_10countries = px.bar(datasort_10countries, 
                          x='Country name', 
-                         y='COVID-19 deaths per 100,000 population in 2020', 
+                         y='COVID-19 deaths per 100,000 population in 2020',
+                         color='Continent'
                          )
                          
 fig_10countries.update_layout(title_text='Top10 Countries: Covid-19 Deaths')
 fig_10countries.show()
-
 
 # In[21]:
 

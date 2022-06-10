@@ -632,7 +632,7 @@ app.layout = html.Div([
 
     html.Div([
     
-    dcc.Dropdown(
+    continent_dropdown = dcc.Dropdown(
     id='names_drop',
     options= continents,
     value=1,
@@ -641,7 +641,8 @@ app.layout = html.Div([
     
     dcc.Graph(
     id='example-graph',
-    figure=fig_10countriespop
+    figure=fig_10countriespop,
+    continent_dropdown
     )
 
 

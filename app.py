@@ -613,6 +613,13 @@ continents = [dict(label=continent ,value=continent_id) for continent, continent
 #fullnames = drivers['forename'] + str(" ") + drivers['surname']
 #pilot_names = [dict(label=fullname, value=driver_id) for fullname, driver_id in zip(fullnames, drivers.index)]
 
+continent_dropdown = dcc.Dropdown(
+    id='names_drop',
+    options= continents,
+    value=1,
+    multi=False
+    )
+
 #App itself
 
 app = dash.Dash(__name__)
@@ -632,12 +639,12 @@ app.layout = html.Div([
 
     html.Div([
     
-    continent_dropdown = dcc.Dropdown(
-    id='names_drop',
-    options= continents,
-    value=1,
-    multi=False
-    ),
+    #continent_dropdown = dcc.Dropdown(
+    #id='names_drop',
+    #options= continents,
+    #value=1,
+    #multi=False
+    #),
     
     dcc.Graph(
     id='example-graph',

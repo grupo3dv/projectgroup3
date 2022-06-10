@@ -577,7 +577,9 @@ datasort_10countries_northamerica = data_10countries_northamerica.sort_values(as
 fig_10countries_northamerica = px.bar(datasort_10countries_northamerica, 
                          x='Country name', 
                          y='COVID-19 deaths per 100,000 population in 2020',
-                         color='Continent'
+                         color='Continent',
+                         template="plotly_dark").update_layout(
+    {"plot_bgcolor": "rgba(0, 0, 0, 0)", "paper_bgcolor": "rgba(0, 0, 0, 0)"}
                          )
                          
 fig_10countries_northamerica.update_layout(title_text='Top10 Countries of North America: Covid-19 Deaths')

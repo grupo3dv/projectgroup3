@@ -642,8 +642,7 @@ app.layout = html.Div([
     
     html.Div(dcc.Graph(id='covid_deaths_graph',figure={})),
 
-    ]),
-    
+  
     html.Div([
     
     html.Label(['Choose a Continent to analyse:'],style={'font-weight': 'bold'}),
@@ -656,7 +655,7 @@ app.layout = html.Div([
     ),
     ]),
     
-    html.Div(dcc.Graph(id='exposure_trust_graph',figure={})),
+    html.Div(dcc.Graph(id='exposure_trust_graph',figure={}))
 
     ])
 
